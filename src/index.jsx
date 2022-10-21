@@ -9,6 +9,7 @@ import ReactDOM from 'react-dom';
 
 import Header, { messages as headerMessages } from '@edx/frontend-component-header';
 import Footer, { messages as footerMessages } from '@edx/frontend-component-footer';
+import { store } from './store';
 
 import appMessages from './i18n';
 import ExamplePage from './example/ExamplePage';
@@ -17,7 +18,7 @@ import './index.scss';
 
 subscribe(APP_READY, () => {
   ReactDOM.render(
-    <AppProvider>
+    <AppProvider store={store}>
       <Header />
       <ExamplePage />
       <Footer />
